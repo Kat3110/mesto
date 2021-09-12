@@ -5,7 +5,7 @@
 }
 @media screen and (max-width: 1024px){
     .header {
-        width: 760px;
+        width: 751px;
     }
 }
 @media screen and (max-width: 768px){
@@ -15,7 +15,7 @@
 }
 @media screen and (max-width: 457px){
     .header {
-        width: 310px;
+        width: 300px;
         padding: 33px 0 0;
     }
 }
