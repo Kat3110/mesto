@@ -7,7 +7,6 @@
         width: 150px;
     }
 }
-
 @media screen and (max-width: 457px){
     .profile__avatar{
         width: auto;
