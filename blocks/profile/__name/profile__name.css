@@ -7,3 +7,12 @@
     word-wrap: break-word;
     max-width: 294px;
 }
+
+@media screen and (max-width: 320px){
+    .profile__name {
+        font-size: 27px;
+        line-height: 33px;
+        width: 189px;
+        text-align: center;
+    }
+}

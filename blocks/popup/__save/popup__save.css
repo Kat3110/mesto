@@ -11,3 +11,10 @@
     border: none;
     margin: 18px auto 37px;
 }
+@media screen and (max-width: 320px){
+    .popup__save {
+        width: 238px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

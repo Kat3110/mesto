@@ -7,3 +7,11 @@
     text-align: start;
     margin: 34px 36px 54px;
 }
+@media screen and (max-width: 320px){
+    .popup__edit {
+        width: 238px;
+        font-size: 18px;
+        line-height: 22px;
+        margin: 25px 22px 75px;
+    }
+}

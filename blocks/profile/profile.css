@@ -2,4 +2,12 @@
     margin-top: 40px;
     display: flex;
     width: 100%;
+
+}
+@media screen and (max-width: 320px){
+    .profile {
+        width: 282px;
+        margin: 42px auto 0;
+        flex-direction: column;
+    }
 }

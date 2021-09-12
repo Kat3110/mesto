@@ -6,7 +6,15 @@
     height: 330px;
     background: #FFFFFF;
     border-radius: 10px;
-    bottom: 712px;
+    top: 195px;
     left: 50%;
     margin-left: -215px;
+}
+@media screen and (max-width: 320px){
+    .popup__box {
+        margin-left: 0;
+        width: 282px;
+        left: 0;
+        margin-left: 19px;
+    }
 }
