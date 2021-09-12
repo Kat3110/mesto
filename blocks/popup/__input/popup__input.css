@@ -12,10 +12,11 @@
     border-right: none;
     border-left: none;
     outline: none;
+    padding: 0;
 }
-@media screen and (max-width: 475px){
+@media screen and (max-width: 457px){
     .popup__input {
-        width: 340px;
+        width: 275px;
         font-size: 14px;
         line-height: 17px;
         margin: 0 auto 30px;

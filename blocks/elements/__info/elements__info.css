@@ -4,12 +4,14 @@
     justify-content: space-between;
     margin: 0 auto;
 }
-@media screen and (max-width: 475px){
+@media screen and (max-width: 1024px){
+    .elements__info {
+        width: 200px;
+    }
+}
+@media screen and (max-width: 457px){
     .elements__info {
         width: 246px;
-        display: flex;
-        justify-content: space-between;
-        margin: 0 auto;
     }
 }
 @media screen and (max-width: 320px){

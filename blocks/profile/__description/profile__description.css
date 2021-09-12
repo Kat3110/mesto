@@ -6,7 +6,8 @@
     word-wrap: break-word;
     width: 100%;
 }
-@media screen and (max-width: 475px){
+
+@media screen and (max-width: 457px){
     .profile__description {
         width: 300px;
         text-align: center;

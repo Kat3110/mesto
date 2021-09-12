@@ -7,6 +7,20 @@
     text-align: start;
     margin: 34px 36px 54px;
 }
+@media screen and (max-width: 768px){
+    .popup__edit {
+        width: 358px;
+        margin: 25px auto 65px;
+    }
+}
+@media screen and (max-width: 457px){
+    .popup__edit {
+        width: 275px;
+        font-size: 20px;
+        line-height: 22px;
+        margin: 25px 22px 65px;
+    }
+}
 @media screen and (max-width: 320px){
     .popup__edit {
         width: 238px;

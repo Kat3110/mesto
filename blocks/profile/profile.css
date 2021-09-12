@@ -2,11 +2,25 @@
     margin-top: 40px;
     display: flex;
     width: 100%;
-
 }
-@media screen and (max-width: 475px){
+@media screen and (max-width: 1024px){
     .profile {
-        width: 440px;
+        width: 100%;
+        margin: 40px auto 0;
+    }
+}
+@media screen and (max-width: 768px){
+    .profile {
+        width: 100%;
+        margin: 40px auto 0;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+    }
+}
+@media screen and (max-width: 457px){
+    .profile {
+        display: flex;
+        width: 320px;
         margin: 41px auto 0;
         flex-direction: column;
     }

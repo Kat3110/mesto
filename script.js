@@ -49,8 +49,8 @@ function changePopup() {
         // очищаем поля ввода имени
         document.querySelector(".popup__input_text_name").value = "";
 
-        // меняем плейсхолдер у поля ввода имени
-        document.querySelector(".popup__input_text_name").placeholder = changeName;
+        // меняем значение у поля ввода имени
+        document.querySelector(".popup__input_text_name").value = changeName;
     }
 
     // проверка на введенный текст
@@ -63,8 +63,8 @@ function changePopup() {
         // очищаем поля ввода описания
         document.querySelector(".popup__input_text_description").value = "";
 
-        // меняем плейсхолдер у поля ввода описания
-        document.querySelector(".popup__input_text_description").placeholder = changeDescription;
+        // меняем значение у поля ввода описания
+        document.querySelector(".popup__input_text_description").value = changeDescription;
     }
 
     // закрываем попап

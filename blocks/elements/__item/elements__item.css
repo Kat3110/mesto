@@ -1,14 +1,29 @@
 .elements__item {
     background-color: white;
-    max-width: 282px;
+    width: 282px;
     height: 361px;
     border-radius: 10px;
     overflow: hidden;
     margin: 0 17px 20px 0;
 }
-@media screen and (max-width: 475px){
+@media screen and (max-width: 1024px){
+    .elements__item {
+        width: 248px;
+        margin: 0 8px 8px 0;
+    }
+}
+@media screen and (max-width: 768px){
+    .elements__item {
+        width: 222px;
+        margin: 0 8px 8px 0;
+        height: 341px;
+    }
+}
+@media screen and (max-width: 457px){
     .elements__item {
         margin: 0 auto 20px;
+        height: 361px;
+        width: 300px;
     }
 }
 @media screen and (max-width: 320px){
