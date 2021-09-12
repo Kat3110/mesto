@@ -11,6 +11,10 @@
     border: none;
     margin: 18px auto 37px;
     padding: 0;
+    cursor: pointer;
+}
+.popup__save:hover {
+    opacity: 0.8;
 }
 @media screen and (max-width: 457px){
     .popup__save {
