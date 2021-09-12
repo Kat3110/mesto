@@ -20,7 +20,7 @@
 @media screen and (max-width: 457px){
     .popup__box {
         margin-left: -160px;
-        width: 320px;
+        width: 310px;
         left: 50%;
     }
 }
