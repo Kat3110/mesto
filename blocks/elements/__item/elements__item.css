@@ -6,6 +6,11 @@
     overflow: hidden;
     margin: 0 17px 20px 0;
 }
+@media screen and (max-width: 475px){
+    .elements__item {
+        margin: 0 auto 20px;
+    }
+}
 @media screen and (max-width: 320px){
     .elements__item {
         min-width: 282px;

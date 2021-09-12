@@ -4,7 +4,13 @@
     width: 100%;
 
 }
-
+@media screen and (max-width: 475px){
+    .profile {
+        width: 440px;
+        margin: 41px auto 0;
+        flex-direction: column;
+    }
+}
 @media screen and (max-width: 320px){
     .profile {
         width: 282px;

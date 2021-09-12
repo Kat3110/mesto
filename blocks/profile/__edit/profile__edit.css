@@ -10,6 +10,12 @@
 .profile__edit:hover {
     opacity: 0.3;
 }
+@media screen and (max-width: 475px) {
+    .profile__edit {
+        margin: 0 20px 0 11px;
+        align-self: center;
+    }
+}
 @media screen and (max-width: 320px) {
     .profile__edit {
         margin: 0 19px 0 10px;

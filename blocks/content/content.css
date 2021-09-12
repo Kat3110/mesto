@@ -2,9 +2,9 @@
     margin: 0 auto;
     max-width: 880px;
 }
-@media screen and (max-width: 320){
+@media screen and (max-width: 475px){
     .content {
-        min-width: 282px;
+        min-width: 440px;
     }
 }
 @media screen and (max-width: 320px){
