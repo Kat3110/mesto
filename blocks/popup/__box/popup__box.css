@@ -1,5 +1,4 @@
 .popup__box {
-    visibility: hidden;
     text-align: center;
     position: absolute;
     z-index: 4;
@@ -8,5 +7,6 @@
     background: #FFFFFF;
     border-radius: 10px;
     bottom: 712px;
-    left: 496px;
+    left: 50%;
+    margin-left: -215px;
 }

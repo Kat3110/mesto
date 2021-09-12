@@ -3,8 +3,8 @@
     position: absolute;
     width: 32px;
     height: 32px;
-    bottom: 346px;
-    right: -36px;
+    top: -76px;
+    right: -40px;
 }
 .popup__close:hover {
     opacity: 0.3;
