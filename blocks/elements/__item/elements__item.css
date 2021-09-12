@@ -29,7 +29,7 @@
 }
 @media screen and (max-width: 320px){
     .elements__item {
-        min-width: 282px;
+        width: 282px;
         height: 362px;
         margin: 0 19px 20px;
     }
