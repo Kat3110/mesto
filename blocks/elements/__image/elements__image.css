@@ -2,14 +2,20 @@
     width: 100%;
     height: 282px;
     object-fit: cover;
+    display: block;
+}
+@media screen and (max-width: 1024px){
+    .elements__image {
+        height: 261px;
+    }
 }
 @media screen and (max-width: 768px){
     .elements__image {
-        height: 268px;
+        height: 236px;
     }
 }
 @media screen and (max-width: 457px){
     .elements__image {
-        height: 282pgx;
+        height: 296px;
     }
 }

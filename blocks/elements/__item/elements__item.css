@@ -9,6 +9,7 @@
 @media screen and (max-width: 1024px){
     .elements__item {
         width: 248px;
+        height: 325px;
         margin: 0 8px 8px 0;
     }
 }
@@ -16,13 +17,13 @@
     .elements__item {
         width: 222px;
         margin: 0 8px 8px 0;
-        height: 341px;
+        height: 300px;
     }
 }
 @media screen and (max-width: 457px){
     .elements__item {
         margin: 0 auto 20px;
-        height: 361px;
+        height: 362px;
         width: 300px;
     }
 }

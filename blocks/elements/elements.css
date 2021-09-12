@@ -15,7 +15,7 @@
     .elements {
         grid-template-columns: repeat(2 , 1fr);
         grid-template-rows: repeat(3 , 1fr);
-        margin: 32px auto 0;
+        margin: 40px auto 0;
     }
 }
 @media screen and (max-width: 457px){
