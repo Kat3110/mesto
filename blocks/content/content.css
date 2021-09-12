@@ -2,8 +2,12 @@
     margin: 0 auto;
     max-width: 880px;
 }
-
 @media screen and (max-width: 320){
+    .content {
+        min-width: 282px;
+    }
+}
+@media screen and (max-width: 320px){
     .content {
         min-width: 282px;
     }

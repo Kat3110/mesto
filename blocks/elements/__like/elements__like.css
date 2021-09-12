@@ -9,3 +9,7 @@
 .elements__like:hover {
     opacity: 0.3;
 }
+
+.elements__active {
+    background: transparent url(../../../images/active.svg) no-repeat center;
+}
