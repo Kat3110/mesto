@@ -1,12 +1,6 @@
-// показываем попап
-function tooglePopup() {
-    let popup = document.getElementsByClassName("popup");
-    popup[0].style.visibility = "visible";
-}
 
-// кнопка + listener
 let button = document.getElementsByClassName("profile__edit");
-button[0].addEventListener("click", tooglePopup, false);
+button[0].addEventListener("click", openPopup, false);
 
 let popup = document.getElementsByClassName("popup")[0];
 
@@ -65,8 +59,17 @@ function changePopup() {
 let savePopupButton = document.getElementsByClassName("popup__save");
 savePopupButton[0].addEventListener("click", changePopup, false);
 
-// кнопка
-// savePopupButton[0].addEventListener("keyup", changePopup, false);
+// сохраняем на enter, listener на все окно
+window.addEventListener("keydown", function (event) {
+	// keyCode 13 — это enter, проверяем нажали ли на энтер
+	if (event.keyCode == 13) {
+		//также проверяем открыт ли попап
+		if (popup.style['visibility'] == 'visible'){
+			// изменяем описание
+			changePopup();
+		}
+	}
+}, false);
 
 
 // лайк
