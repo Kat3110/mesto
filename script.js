@@ -65,6 +65,9 @@ function changePopup() {
 let savePopupButton = document.getElementsByClassName("popup__save");
 savePopupButton[0].addEventListener("click", changePopup, false);
 
+// кнопка
+// savePopupButton[0].addEventListener("keyup", changePopup, false);
+
 
 // лайк
 // определяем иконки лайк
