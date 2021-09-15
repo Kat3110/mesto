@@ -1,31 +1,28 @@
 // определяем попап
 let popup = document.getElementsByClassName("popup")[0];
-
 // показываем попап
 function openPopup() {
     popup.classList.add('popup_open');
 }
-
 // скрываем попап
 function closePopup() {
     popup.classList.remove('popup_open');
 }
-
 // кнопка открытия + listener
 let openPopupButton = document.getElementsByClassName("profile__edit");
 openPopupButton[0].addEventListener("click", openPopup, false);
 // кнопка закрытия + listener
 let closePopupButton = document.getElementsByClassName("popup__close");
-
+closePopupButton[0].addEventListener("click", closePopup, false);
 // сохранение имени и описания
-function changePopup() {
+function changePopup(ev) {
+    ev.preventDefault()
     // определяем значение полей ввода имени и описания
     let changeName = document.querySelector(".popup__input_text_name").value
     let changeDescription = document.querySelector(".popup__input_text_description").value
     // определяем поля куда вводим новые данные
     let name = document.querySelector(".profile__name");
     let description = document.querySelector(".profile__description");
-
     // проверка на введенный текст
     if (changeName == "") {
         // если текста нет, то ничего не происходит
@@ -51,11 +48,9 @@ function changePopup() {
     // закрываем попап
     closePopup()
 }
-
 // кнопка сохранить + listener
 let savePopupButton = document.getElementsByClassName("popup__save");
 savePopupButton[0].addEventListener("click", changePopup, false);
-
 // сохраняем на enter, listener на все окно
 window.addEventListener("keydown", function (event) {
     // keyCode 13 — это enter, проверяем нажали ли на энтер
@@ -63,12 +58,10 @@ window.addEventListener("keydown", function (event) {
         //также проверяем открыт ли попап
         if (popup.classList.contains('popup_open')) {
             // изменяем описание
-            changePopup();
+            changePopup(event);
         }
     }
 }, false);
-
-
 // лайк
 // определяем иконки лайк
 var like = document.getElementsByClassName("elements__like");
