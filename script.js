@@ -1,17 +1,14 @@
-
-let button = document.getElementsByClassName("profile__edit");
-button[0].addEventListener("click", openPopup, false);
-
+// определяем попап
 let popup = document.getElementsByClassName("popup")[0];
 
 // показываем попап
 function openPopup() {
-    popup.style.visibility = "visible";
+    popup.classList.add('popup_open');
 }
 
 // скрываем попап
 function closePopup() {
-    popup.style.visibility = "hidden";
+    popup.classList.remove('popup_open');
 }
 
 // кнопка открытия + listener
@@ -19,7 +16,6 @@ let openPopupButton = document.getElementsByClassName("profile__edit");
 openPopupButton[0].addEventListener("click", openPopup, false);
 // кнопка закрытия + listener
 let closePopupButton = document.getElementsByClassName("popup__close");
-closePopupButton[0].addEventListener("click", closePopup, false);
 
 // сохранение имени и описания
 function changePopup() {
@@ -29,6 +25,7 @@ function changePopup() {
     // определяем поля куда вводим новые данные
     let name = document.querySelector(".profile__name");
     let description = document.querySelector(".profile__description");
+
     // проверка на введенный текст
     if (changeName == "") {
         // если текста нет, то ничего не происходит
@@ -64,7 +61,7 @@ window.addEventListener("keydown", function (event) {
     // keyCode 13 — это enter, проверяем нажали ли на энтер
     if (event.keyCode == 13) {
         //также проверяем открыт ли попап
-        if (popup.style['visibility'] == 'visible') {
+        if (popup.classList.contains('popup_open')) {
             // изменяем описание
             changePopup();
         }

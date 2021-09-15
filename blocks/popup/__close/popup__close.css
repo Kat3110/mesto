@@ -3,7 +3,7 @@
     position: absolute;
     width: 32px;
     height: 32px;
-    top: -76px;
+    top: -42px;
     right: -40px;
     cursor: pointer;
     border: none;
@@ -16,7 +16,6 @@
     .popup__close {
         width: 32px;
         height: 32px;
-        top: -76px;
         right: -30px;
     }
 }
@@ -24,7 +23,7 @@
     .popup__close {
         width: 22px;
         height: 22px;
-        top: -75px;
+        top: -41px;
         right: 0px;
     }
 }
@@ -32,7 +31,7 @@
     .popup__close {
         width: 20px;
         height: 20px;
-        top: -60px;
+        top: -26px;
         right: 0px;
     }
 }
