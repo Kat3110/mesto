@@ -2,6 +2,8 @@
     color: #FFFFFF;
     max-width: 336px;
     align-self: center;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
     
 }
 @media screen and (max-width: 457px){

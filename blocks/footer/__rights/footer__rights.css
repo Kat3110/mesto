@@ -1,3 +1,11 @@
 .footer__rights {
     color: #545454;
+    font-size: 18px;
+    line-height: 22px;
+}
+@media screen and (max-width: 320px){
+    .footer__rights {
+        font-size: 14px;
+        line-height: 17px;
+    }
 }

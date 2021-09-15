@@ -61,14 +61,14 @@ savePopupButton[0].addEventListener("click", changePopup, false);
 
 // сохраняем на enter, listener на все окно
 window.addEventListener("keydown", function (event) {
-	// keyCode 13 — это enter, проверяем нажали ли на энтер
-	if (event.keyCode == 13) {
-		//также проверяем открыт ли попап
-		if (popup.style['visibility'] == 'visible'){
-			// изменяем описание
-			changePopup();
-		}
-	}
+    // keyCode 13 — это enter, проверяем нажали ли на энтер
+    if (event.keyCode == 13) {
+        //также проверяем открыт ли попап
+        if (popup.style['visibility'] == 'visible') {
+            // изменяем описание
+            changePopup();
+        }
+    }
 }, false);
 
 
@@ -81,11 +81,11 @@ for (var i = 0; i < like.length; i++) {
 }
 function likeButton() {
     // делаем проверку на наличие класса актив
-    if (this.classList.contains('elements__active')) {
+    if (this.classList.contains('elements__like_active')) {
         // если класс есть, удаляем его
-        this.classList.remove('elements__active');
+        this.classList.remove('elements__like_active');
     } else {
         // если класса нет, добавляем его
-        this.classList.add('elements__active');
+        this.classList.add('elements__like_active');
     }
 }

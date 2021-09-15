@@ -18,7 +18,7 @@
 }
 @media screen and (max-width: 320px) {
     .profile__edit {
-        margin: 0 19px 0 10px;
-        align-self: center;
+        margin: 0 0 0 10px;
+        background-size: 45%;
     }
 }

@@ -17,16 +17,10 @@
 @media screen and (max-width: 457px){
     .popup__input {
         width: 275px;
-        font-size: 14px;
-        line-height: 17px;
-        margin: 0 auto 30px;
     }
 }
 @media screen and (max-width: 320px){
     .popup__input {
         width: 238px;
-        font-size: 14px;
-        line-height: 17px;
-        margin: 0 auto 30px;
     }
 }

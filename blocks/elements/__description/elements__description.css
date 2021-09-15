@@ -7,9 +7,3 @@
     line-height: 29px;
     color: #000000;
 }
-@media screen and (max-width: 1024px){
-    .elements__description {
-        font-size: 20px;
-        line-height: 24px;
-    }
-}

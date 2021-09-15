@@ -12,15 +12,15 @@
     .profile__name {
         font-size: 30px;
         line-height: 35px;
-        width: 210px;
+        width: 240px;
         text-align: center;
     }
 }
 @media screen and (max-width: 320px){
     .profile__name {
+        width: 234px;
         font-size: 27px;
         line-height: 33px;
-        width: 189px;
-        text-align: center;
+        text-align: end;
     }
 }

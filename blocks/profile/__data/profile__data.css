@@ -1,8 +1,0 @@
-.profile__data {
-    display: flex;
-}
-@media screen and (max-width: 457px){
-    .profile__data {
-        justify-content: center;
-    }
-}

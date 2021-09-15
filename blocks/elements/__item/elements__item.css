@@ -1,7 +1,6 @@
 .elements__item {
     background-color: white;
     width: 282px;
-    height: 361px;
     border-radius: 10px;
     overflow: hidden;
     margin: 0 17px 20px 0;
@@ -9,7 +8,6 @@
 @media screen and (max-width: 1024px){
     .elements__item {
         width: 245px;
-        height: 325px;
         margin: 0 8px 8px 0;
     }
 }
@@ -17,20 +15,17 @@
     .elements__item {
         width: 216px;
         margin: 0 8px 8px 0;
-        height: 300px;
     }
 }
 @media screen and (max-width: 457px){
     .elements__item {
         margin: 0 auto 20px;
-        height: 362px;
         width: 300px;
     }
 }
 @media screen and (max-width: 320px){
     .elements__item {
         width: 282px;
-        height: 362px;
         margin: 0 auto 20px;
     }
 }
