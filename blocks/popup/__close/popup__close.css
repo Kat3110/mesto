@@ -8,6 +8,7 @@
     cursor: pointer;
     border: none;
     padding: 0;
+    transition: opacity 0.3s;
 }
 .popup__close:hover {
     opacity: 0.3;
