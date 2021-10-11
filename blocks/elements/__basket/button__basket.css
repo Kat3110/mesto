@@ -1,0 +1,15 @@
+.button__basket {
+    background: transparent url('../../../images/basket.svg');
+    width: 18px;
+    height: 19px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+}
+.button__basket:hover {
+    opacity: 0.6;
+}

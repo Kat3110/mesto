@@ -4,6 +4,7 @@
     border-radius: 10px;
     overflow: hidden;
     margin: 0 17px 20px 0;
+    position: relative;
 }
 @media screen and (max-width: 1024px){
     .elements__item {

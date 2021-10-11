@@ -1,19 +1,43 @@
 // определяем попап
 let popup = document.getElementsByClassName("popup")[0];
+let popupFirst = document.getElementsByClassName("popup__first")[0];
+let popupSecond = document.getElementsByClassName("popup__second")[0];
+let popupThird = document.getElementsByClassName("popup__third")[0];
+
 // показываем попап
-function openPopup() {
+function openPopupFirst() {
     popup.classList.add('popup_open');
+    popupFirst.classList.add('popup_open');
 }
+
+// показываем попап
+function openPopupSecond() {
+    popup.classList.add('popup_open');
+    popupSecond.classList.add('popup_open');
+}
+
 // скрываем попап
 function closePopup() {
     popup.classList.remove('popup_open');
+    popupFirst.classList.remove('popup_open');
+    popupSecond.classList.remove('popup_open');
+    popupThird.classList.remove('popup_open');
 }
+
 // кнопка открытия + listener
 let openPopupButton = document.getElementsByClassName("profile__edit");
-openPopupButton[0].addEventListener("click", openPopup, false);
+openPopupButton[0].addEventListener("click", openPopupFirst, false);
+
 // кнопка закрытия + listener
 let closePopupButton = document.getElementsByClassName("popup__close");
-closePopupButton[0].addEventListener("click", closePopup, false);
+for (var i = 0; i < closePopupButton.length; i++) {
+    closePopupButton[i].addEventListener("click", closePopup, false);
+}
+
+// кнопка открытия адд + listener
+let openPopupSecondButton = document.getElementsByClassName("profile__add");
+openPopupSecondButton[0].addEventListener("click", openPopupSecond, false);
+
 // сохранение имени и описания
 function changePopup(ev) {
     ev.preventDefault()
@@ -49,33 +73,155 @@ function changePopup(ev) {
     closePopup()
 }
 // кнопка сохранить + listener
-let savePopupButton = document.getElementsByClassName("popup__save");
+let savePopupButton = document.getElementsByClassName("popup__save_profile");
 savePopupButton[0].addEventListener("click", changePopup, false);
-// сохраняем на enter, listener на все окно
-window.addEventListener("keydown", function (event) {
-    // keyCode 13 — это enter, проверяем нажали ли на энтер
-    if (event.keyCode == 13) {
-        //также проверяем открыт ли попап
-        if (popup.classList.contains('popup_open')) {
-            // изменяем описание
-            changePopup(event);
-        }
+
+// добавление картинки
+function addNewItem(ev) {
+    ev.preventDefault()
+    // определяем название кнопки
+    let addName = document.querySelector(".popup__input_add_name").value
+    // определяем иконку
+    let addImg = document.querySelector(".popup__input_add_img").value
+    // вызов функии с новыми данными
+    addItemToElements(addName, addImg);
+
+    // обнуляем значения чтобы работали плейсхолдеры
+    document.querySelector(".popup__input_add_name").value = "";
+    document.querySelector(".popup__input_add_img").value = "";
+
+    // закрываем попап
+    closePopup()
+}
+
+// кнопка добавить + listener
+let addPopupButton = document.getElementsByClassName("popup__save_picture");
+addPopupButton[0].addEventListener("click", addNewItem, false);
+
+// массив карточек
+const initialCards = [
+    {
+        name: 'Архыз',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+        name: 'Челябинская область',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+        name: 'Иваново',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+        name: 'Камчатка',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+        name: 'Холмогорский район',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+        name: 'Байкал',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
-}, false);
-// лайк
+];
+// функция добавления нового элемента
+function addItemToElements(name, link) {
+    // создаем див и добавляем ему класс
+    let divFirst = document.createElement('div');
+    divFirst.classList.add('elements__item');
+
+    // создаем имейж и добавляем ему класс
+    let img = document.createElement('img');
+    img.classList.add('elements__image');
+    img.setAttribute('src', link);
+
+    // создаем див внутри первого див и добавляем ему класс
+    let divSecond = document.createElement('div');
+    divSecond.classList.add('elements__info');
+
+    // создаем п внутри второго див и добавляем ему класс
+    let p = document.createElement('p');
+    p.classList.add('elements__description');
+    p.innerText = name;
+
+    // создаем баттон внутри второго див и добавляем ему класс
+    let button = document.createElement('button');
+    button.classList.add('elements__like');
+    button.setAttribute('type', 'button');
+
+    // создаем баттон корзину внутри второго див и добавляем ему класс
+    let basket = document.createElement('button');
+    basket.classList.add('button__basket');
+    basket.setAttribute('type', 'button');
+
+    // собираем новый элемент
+    divSecond.appendChild(p);
+    divSecond.appendChild(button);
+    divFirst.appendChild(img);
+    divFirst.appendChild(basket);
+    divFirst.appendChild(divSecond);
+
+    // вставляем его в элементс
+    let elements = document.querySelector('.elements');
+    elements.prepend(divFirst);
+}
+// перебор массива и вызов
+initialCards.forEach(element => addItemToElements(element.name, element.link));
+
+
 // определяем иконки лайк
-var like = document.getElementsByClassName("elements__like");
+let like = document.getElementsByClassName("elements__like");
 for (var i = 0; i < like.length; i++) {
     // нажатие на лайк
-    like[i].addEventListener('click', likeButton);
+    like[i].addEventListener("click", function likeButton() {
+
+        // делаем проверку на наличие класса актив
+        if (this.classList.contains('elements__like_active')) {
+            // если класс есть, удаляем его
+            this.classList.remove('elements__like_active');
+        } else {
+            // если класса нет, добавляем его
+            this.classList.add('elements__like_active');
+        }
+    }, false);
 }
-function likeButton() {
-    // делаем проверку на наличие класса актив
-    if (this.classList.contains('elements__like_active')) {
-        // если класс есть, удаляем его
-        this.classList.remove('elements__like_active');
-    } else {
-        // если класса нет, добавляем его
-        this.classList.add('elements__like_active');
-    }
+
+// определяем кнопку корзина
+let basket = document.getElementsByClassName("button__basket");
+for (var i = 0; i < basket.length; i++) {
+    // нажатие на корзину
+    basket[i].addEventListener("click", function deleteItem() {
+
+        // находим нужный элемент и удаляем
+        this.parentElement.remove();
+    }, false);
+}
+
+function openPopupThird() {
+    popup.classList.add('popup_open');
+    popupThird.classList.add('popup_open');
+
+    let image = document.getElementsByClassName("popup__image")[0];
+    // let name = document.getElementsByClassName("popup__name")[0];
+
+    // image.setAttribute('src', img)
+
+    console.log('2');
+}
+
+let buttonOpenThirdPopap = document.getElementsByClassName("elements__image");
+for (var i = 0; i < buttonOpenThirdPopap.length; i++) {
+    buttonOpenThirdPopap[i].addEventListener("click", function openPopupThird(img) {
+        popup.classList.add('popup_open');
+        popupThird.classList.add('popup_open');
+    
+        let image = document.getElementsByClassName("popup__image")[0];
+        // let name = document.getElementsByClassName("popup__name")[0];
+    
+        image.setAttribute('src', img)
+    
+        console.log('2');
+    }, false);
+    openPopupThird(buttonOpenThirdPopap[i].getAttribute('src'))
 }

@@ -8,3 +8,11 @@
     bottom: 0;
     z-index: 1;
 }
+
+.popup__first {
+    display: none;
+}
+
+.popup__second {
+    display: none;
+}

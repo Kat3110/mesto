@@ -24,67 +24,36 @@
         <button class="profile__add" type="button"></button>
       </section>
       <section class="elements">
-        <div class="elements__item">
-          <img class="elements__image" src="images/kirill-pershin-1088404-unsplash.jpg"
-            alt="Изображен старый заброшенный замок на поляне.">
-          <div class="elements__info">
-            <p class="elements__description">Карачаевск</p>
-            <button class="elements__like" type="button"></button>
-          </div>
-        </div>
-        <div class="elements__item">
-          <img class="elements__image" src="images/kirill-pershin-1404681-unsplash.jpg"
-            alt="Долина с видом на горы в закате.">
-          <div class="elements__info">
-            <p class="elements__description">Гора Эльбрус</p>
-            <button class="elements__like" type="button"></button>
-          </div>
-        </div>
-        <div class="elements__item">
-          <img class="elements__image" src="images/kirill-pershin-1556355-unsplash.jpg"
-            alt="горная местность, вид на скалы">
-          <div class="elements__info">
-            <p class="elements__description">Домбай</p>
-            <button class="elements__like" type="button"></button>
-          </div>
-        </div>
-        <div class="elements__item">
-          <img class="elements__image" src="images/kirill-pershin-1404681-unsplash-1.jpg"
-            alt="Долина с видом на горы в закате.">
-          <div class="elements__info">
-            <p class="elements__description">Гора Эльбрус</p>
-            <button class="elements__like" type="button"></button>
-          </div>
-        </div>
-        <div class="elements__item">
-          <img class="elements__image" src="images/kirill-pershin-1556355-unsplash-1.jpg"
-            alt="горная местность, вид на скалы">
-          <div class="elements__info">
-            <p class="elements__description">Домбай</p>
-            <button class="elements__like" type="button"></button>
-          </div>
-        </div>
-        <div class="elements__item">
-          <img class="elements__image" src="images/kirill-pershin-1088404-unsplash-1.jpg"
-            alt="Изображен старый заброшенный замок на поляне.">
-          <div class="elements__info">
-            <p class="elements__description">Карачаево-Черкессия</p>
-            <button class="elements__like" type="button"></button>
-          </div>
-        </div>
+
       </section>
     </main>
     <footer class="footer">
       <div class="footer__rights">&copy; 2020 Mesto Russia</div>
     </footer>
     <div class="popup">
-      <form class="popup__box" name="profile">
+      <form class="popup__box popup__first" name="profile">
         <h2 class="popup__edit">Редактировать профиль</h2>
-        <input class="popup__input popup__input_text_name"  name="name" value='Жак-Ив Кусто'>
-        <input class="popup__input popup__input_text_description" name="description"  value='Исследователь океана'>
-        <button class="popup__save" type="submit">Сохранить</button>
+        <input class="popup__input popup__input_text_name" name="name" value='Жак-Ив Кусто'>
+        <input class="popup__input popup__input_text_description" name="description"
+          value='Исследователь океана'>
+        <button class="popup__save popup__save_profile" type="submit">Сохранить</button>
         <button class="popup__close" type="button"></button>
       </form>
+
+      <form class="popup__box popup__second" name="picture">
+        <h2 class="popup__edit">Новое место</h2>
+        <input class="popup__input popup__input_add_name" name="name" placeholder='Название'>
+        <input class="popup__input popup__input_add_img" name="img"
+          placeholder='Ссылка на картинку'>
+        <button class="popup__save popup__save_picture" type="submit">Добавить</button>
+        <button class="popup__close" type="button"></button>
+      </form>
+
+      <div class="popup__third">
+        <img class="popup__image" src="">
+        <button class="popup__close" type="button"></button>
+        <p class="popup__depiction popup__name"></p>
+      </div>
     </div>
   </div>
   <script src="script.js"></script>
