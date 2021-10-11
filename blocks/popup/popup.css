@@ -16,3 +16,13 @@
 .popup__second {
     display: none;
 }
+
+.popup__third {
+    display: none;
+    z-index: 3;
+    margin-top: 90px;
+}
+
+.popup__third_relative {
+    position: relative;
+}

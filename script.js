@@ -21,7 +21,7 @@ function closePopup() {
     popup.classList.remove('popup_open');
     popupFirst.classList.remove('popup_open');
     popupSecond.classList.remove('popup_open');
-    popupThird.classList.remove('popup_open');
+    popupThird.classList.remove('popup_open_third');
 }
 
 // кнопка открытия + listener
@@ -106,7 +106,7 @@ const initialCards = [
     },
     {
         name: 'Челябинская область',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+        link: 'https://u24.ru/img/news/article_big_461931540715575.jpg'
     },
     {
         name: 'Иваново',
@@ -146,18 +146,38 @@ function addItemToElements(name, link) {
     p.innerText = name;
 
     // создаем баттон внутри второго див и добавляем ему класс
-    let button = document.createElement('button');
-    button.classList.add('elements__like');
-    button.setAttribute('type', 'button');
+    let buttonLike = document.createElement('button');
+    buttonLike.classList.add('elements__like');
+    buttonLike.setAttribute('type', 'button');
+
+    // навешиваем обработчик на лайк
+    buttonLike.addEventListener("click", function likeButton() {
+
+        // делаем проверку на наличие класса актив
+        if (this.classList.contains('elements__like_active')) {
+            // если класс есть, удаляем его
+            this.classList.remove('elements__like_active');
+        } else {
+            // если класса нет, добавляем его
+            this.classList.add('elements__like_active');
+        }
+    }, false);
 
     // создаем баттон корзину внутри второго див и добавляем ему класс
     let basket = document.createElement('button');
     basket.classList.add('button__basket');
     basket.setAttribute('type', 'button');
 
+    // нажатие на корзину = удаление
+    basket.addEventListener("click", function deleteItem() {
+
+        // находим нужный элемент и удаляем
+        this.parentElement.remove();
+    }, false);
+
     // собираем новый элемент
     divSecond.appendChild(p);
-    divSecond.appendChild(button);
+    divSecond.appendChild(buttonLike);
     divFirst.appendChild(img);
     divFirst.appendChild(basket);
     divFirst.appendChild(divSecond);
@@ -170,58 +190,22 @@ function addItemToElements(name, link) {
 initialCards.forEach(element => addItemToElements(element.name, element.link));
 
 
-// определяем иконки лайк
-let like = document.getElementsByClassName("elements__like");
-for (var i = 0; i < like.length; i++) {
-    // нажатие на лайк
-    like[i].addEventListener("click", function likeButton() {
+// function openPopupThird() {
+//     popup.classList.add('popup_open');
+//     popupThird.classList.add('popup_open_third');
 
-        // делаем проверку на наличие класса актив
-        if (this.classList.contains('elements__like_active')) {
-            // если класс есть, удаляем его
-            this.classList.remove('elements__like_active');
-        } else {
-            // если класса нет, добавляем его
-            this.classList.add('elements__like_active');
-        }
-    }, false);
-}
+//     let image = document.getElementsByClassName("popup__image")[0];
 
-// определяем кнопку корзина
-let basket = document.getElementsByClassName("button__basket");
-for (var i = 0; i < basket.length; i++) {
-    // нажатие на корзину
-    basket[i].addEventListener("click", function deleteItem() {
-
-        // находим нужный элемент и удаляем
-        this.parentElement.remove();
-    }, false);
-}
-
-function openPopupThird() {
-    popup.classList.add('popup_open');
-    popupThird.classList.add('popup_open');
-
-    let image = document.getElementsByClassName("popup__image")[0];
-    // let name = document.getElementsByClassName("popup__name")[0];
-
-    // image.setAttribute('src', img)
-
-    console.log('2');
-}
+// }
 
 let buttonOpenThirdPopap = document.getElementsByClassName("elements__image");
 for (var i = 0; i < buttonOpenThirdPopap.length; i++) {
-    buttonOpenThirdPopap[i].addEventListener("click", function openPopupThird(img) {
+    buttonOpenThirdPopap[i].addEventListener("click", function openPopupThird(event) {
         popup.classList.add('popup_open');
-        popupThird.classList.add('popup_open');
+        popupThird.classList.add('popup_open_third');
     
         let image = document.getElementsByClassName("popup__image")[0];
-        // let name = document.getElementsByClassName("popup__name")[0];
     
-        image.setAttribute('src', img)
-    
-        console.log('2');
+        image.setAttribute('src', event.target.src);
     }, false);
-    openPopupThird(buttonOpenThirdPopap[i].getAttribute('src'))
 }

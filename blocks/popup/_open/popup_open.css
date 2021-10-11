@@ -1,3 +1,9 @@
 .popup_open {
     display: block;
 }
+.popup_open_third {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
